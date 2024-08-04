@@ -18,6 +18,13 @@ const Routes = require('./Routes/index');
 // Serve static files from the 'public' directory
 app.use(express.static(path.join(__dirname, 'View')));
 
+
+app.get('/find-mentees', (req, res) =>
+{
+    res.sendFile(path.join(__dirname, 'View', 'mentee.html'));
+});
+
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
