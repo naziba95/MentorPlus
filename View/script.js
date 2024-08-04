@@ -4,7 +4,7 @@ document.getElementById('lookupForm').addEventListener('submit', function (event
 
     const phoneNumber = document.getElementById('phoneNumber').value;
 
-    fetch(`http://localhost:3000/api/v1/Mapping/FetchMentorByPhone?PhoneNo=${encodeURIComponent(phoneNumber)}`)
+    fetch(`https://mentorplus.onrender.com/api/v1/Mapping/FetchMentorByPhone?PhoneNo=${encodeURIComponent(phoneNumber)}`)
         .then(response => response.json())
         .then(data =>
         {
