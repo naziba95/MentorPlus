@@ -10,7 +10,14 @@ const http = require('http');
 const path = require('path');
 
 // Cross Origin Resource Sharing
-app.use(cors());
+//app.use(cors());
+
+app.use(cors({
+    origin: '*', // Or specify your mobile device's IP or domain
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true
+}));
+
 // Register the routes
 const Routes = require('./Routes/index');
 

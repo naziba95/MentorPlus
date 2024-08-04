@@ -10,10 +10,18 @@ const menteeSchema = new Schema({
         type: String,
         required: false
     },
-    
+
     PhoneNumber: {
         type: String,
         required: true
+    },
+    ParentContact: {
+        type: String,
+        required: false
+    },
+    ImageUrl: {
+        type: String,
+        required: false
     },
     Interests: {
         type: [String],
@@ -28,6 +36,6 @@ const menteeSchema = new Schema({
         ref: 'Mentor',
         required: false
     },
-}, {timestamps: true });
+}, { timestamps: true });
 
 module.exports = mongoose.model('Mentee', menteeSchema);

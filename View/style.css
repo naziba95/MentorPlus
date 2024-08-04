@@ -9,12 +9,37 @@ body {
     justify-content: center;
     min-height: 100vh;
     background-color: #f4f4f4;
-    background: url('https://unsplash.com/photos/gray-metal-framed-chalkboard-with-whatever-it-takes-written-XzUMBNmQro0 ') no-repeat center center fixed;
-
+    background: url('https://unsplash.com/photos/gray-metal-framed-chalkboard-with-whatever-it-takes-written-XzUMBNmQro0') no-repeat center center fixed;
+    background-size: cover;
 }
 
-h1 {
+h1,
+h2 {
     color: #333;
+    text-align: center;
+    margin: 20px 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+    margin: 20px 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 18px;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
 }
 
 form {
@@ -24,7 +49,7 @@ form {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 400px;
-    margin-bottom: 20px;
+    margin: 20px auto;
 }
 
 label {
@@ -33,12 +58,14 @@ label {
     font-weight: bold;
 }
 
-input[type="text"] {
+input[type="text"],
+input[type="email"] {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    box-sizing: border-box;
 }
 
 button {
@@ -63,6 +90,7 @@ button:hover {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 400px;
+    margin: 20px auto;
 }
 
 #mentorDetails p {
@@ -73,6 +101,11 @@ button:hover {
 @media (max-width: 600px) {
     body {
         padding: 10px;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
     }
 
     form,
