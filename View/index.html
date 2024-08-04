@@ -4,19 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mentor Lookup</title>
+    <title>Find a Mentor</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
-    <h1>Find my mentor</h1>
-    <form id="lookupForm">
-        <label for="phoneNumber">Phone Number</label>
-        <input type="text" id="phoneNumber" name="phoneNumber" required>
-        <button type="submit">Lookup Mentor</button>
+<body class="d-flex flex-column align-items-center justify-content-center min-vh-100">
+    <h1 class="mb-4 font-weight-bold">Find my mentor</h1>
+    <form id="lookupForm" class="w-100 max-w-400 mb-3">
+        <div class="form-group">
+            <label for="phoneNumber">Phone Number</label>
+            <input type="text" id="phoneNumber" name="phoneNumber" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Lookup Mentor</button>
     </form>
-    <div id="mentorDetails"></div>
-
+    <div id="mentorDetails" class="w-100 max-w-400"></div>
+    <!-- <nav class="mt-4">
+        <ul class="nav">
+            <li class="nav-item"><a class="nav-link" href="registerMentor.html">Register Mentor</a></li>
+            <li class="nav-item"><a class="nav-link" href="registerMentee.html">Register Mentee</a></li>
+            <li class="nav-item"><a class="nav-link" href="assignMentor.html">Assign Mentor</a></li>
+        </ul>
+    </nav> -->
     <script src="script.js"></script>
 </body>
 

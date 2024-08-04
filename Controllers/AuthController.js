@@ -43,7 +43,8 @@ const RegisterMentor = async (req, res) =>
             PhoneNumber,
             Email,
             Interests,
-            Hobbies
+            Hobbies,
+
         });
 
         await newMentor.save();
@@ -60,7 +61,7 @@ const RegisterMentee = async (req, res) =>
 {
     try
     {
-        const { FullName, Email, PhoneNumber, Hobbies, Interests, Password, ConfirmPassword } = req.body;
+        const { FullName, Email, PhoneNumber, Hobbies, Interests, MentorId, ParentContact, Password, ConfirmPassword } = req.body;
 
         if (!FullName || !PhoneNumber || !Email)
         {
@@ -94,7 +95,9 @@ const RegisterMentee = async (req, res) =>
             PhoneNumber,
             Email,
             Interests,
-            Hobbies
+            Hobbies,
+            ParentContact,
+            Mentor: MentorId
         });
 
         await newMentee.save();

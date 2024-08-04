@@ -60,4 +60,25 @@ const FetchMentorByPhoneNo = async (req, res) =>
     }
 }
 
-module.exports = { AssignMentor, FetchMentorByPhoneNo }
+
+const GetAllMentors = async (req, res) => 
+    {
+        try
+        {
+            
+            const mentor = await MentorModel.find()
+            if (mentor == null)
+            {
+                return res.status(400).json({ message: "No mentors found" })
+            }
+        
+    
+            return res.status(200).json({ message: "Mentors found", mentor })
+        }
+        catch (error)
+        {
+            console.error(error)
+            return res.status(500).json({ message: "An error occurred" })
+        }
+    }
+module.exports = { AssignMentor, FetchMentorByPhoneNo, GetAllMentors }
