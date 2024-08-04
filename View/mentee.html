@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Mentees</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="menteeStyle.css">
+</head>
+
+<body class="d-flex flex-column align-items-center justify-content-center min-vh-100">
+    <div class="container text-left">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-6">
+                <h1 class="mb-4 font-weight-bold text-center">Find Mentees</h1>
+                <form id="lookupForm" class="w-100 mb-3">
+                    <div class="form-group">
+                        <label for="phoneNumber">Mentor Phone Number</label>
+                        <input type="text" id="phoneNumber" name="phoneNumber" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100 mb-2">Lookup Mentees</button>
+                </form>
+                <div id="menteeDetails" class="w-100 mb-3"></div>
+                <div class="d-flex justify-content-between">
+                    <button id="prevButton" class="btn btn-primary w-45 mb-2" style="display: none;">Previous</button>
+                    <button id="nextButton" class="btn btn-primary w-45 mb-2" style="display: none;">Next</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="menteeScript.js"></script>
+</body>
+
+</html>
