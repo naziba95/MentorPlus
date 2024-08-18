@@ -24,6 +24,10 @@ app.get('/find-mentees', (req, res) =>
     res.sendFile(path.join(__dirname, 'View', 'mentee.html'));
 });
 
+app.get('/login', (req, res) =>
+{
+    res.sendFile(path.join(__dirname, 'View', 'MentorLogin.html'));
+});
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));

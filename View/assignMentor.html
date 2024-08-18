@@ -9,15 +9,23 @@
 </head>
 
 <body>
-    <h1>Assign Mentor</h1>
+    <h1>Assign Mentor to Mentee</h1>
     <form id="assignMentorForm">
-        <label for="menteeId">Mentee ID</label>
-        <input type="text" id="menteeId" name="menteeId" required>
-        <label for="mentorId">Mentor ID</label>
-        <input type="text" id="mentorId" name="mentorId" required>
+        <div class="form-group">
+            <label for="menteePhone">Mentee Phone Number</label>
+            <input type="text" id="menteePhone" name="menteePhone" required>
+            <div id="menteeSuggestions" class="suggestions"></div>
+        </div>
+
+        <div class="form-group">
+            <label for="mentorPhone">Mentor Phone Number</label>
+            <input type="text" id="mentorPhone" name="mentorPhone" required>
+            <div id="mentorSuggestions" class="suggestions"></div>
+        </div>
+
         <button type="submit">Assign Mentor</button>
     </form>
-    <script src="script.js"></script>
+    <script src="AssignScript.js"></script>
 </body>
 
 </html>

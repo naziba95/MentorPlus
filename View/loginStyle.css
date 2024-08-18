@@ -1,0 +1,46 @@
+/* Basic styles for the form */
+.container {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+}
+
+.message {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.message.success {
+    color: green;
+}
+
+.message.error {
+    color: red;
+}
