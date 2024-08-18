@@ -62,51 +62,89 @@ const FetchMentorByPhoneNo = async (req, res) =>
 
 
 const GetAllMentors = async (req, res) => 
+{
+    try
     {
-        try
+
+        const mentor = await MentorModel.find()
+        if (mentor == null)
         {
-            
-            const mentor = await MentorModel.find()
-            if (mentor == null)
-            {
-                return res.status(400).json({ message: "No mentors found" })
-            }
-        
-    
-            return res.status(200).json({ message: "Mentors found", mentor })
+            return res.status(400).json({ message: "No mentors found" })
         }
-        catch (error)
-        {
-            console.error(error)
-            return res.status(500).json({ message: "An error occurred" })
-        }
+
+
+        return res.status(200).json({ message: "Mentors found", mentor })
     }
+    catch (error)
+    {
+        console.error(error)
+        return res.status(500).json({ message: "An error occurred" })
+    }
+}
 
-    const GetMenteesByMentorPhoneNo = async (req, res) => 
+const GetMenteesByMentorPhoneNo = async (req, res) => 
+{
+    try
+    {
+        const { PhoneNo } = req.query;
+        const mentor = await MentorModel.findOne({ PhoneNumber: PhoneNo })
+        if (mentor == null)
         {
-            try
-            {
-                const { PhoneNo } = req.query;
-                const mentor = await MentorModel.findOne({ PhoneNumber : PhoneNo})
-                if (mentor == null)
-                {
-                    return res.status(400).json({ message: "No mentor found" })
-                }
-                const mentorId = mentor._id;
-                const mentees = await MenteeModel.find({ Mentor : mentorId})
-                if (mentees == null)
-                {
-                    return res.status(400).json({ message: "No mentees found" })
-                }
-        
-                return res.status(200).json({ message: "Mentors found", mentees })
-            }
-            catch (error)
-            {
-                console.error(error)
-                return res.status(500).json({ message: "An error occurred" })
-            }
+            return res.status(400).json({ message: "No mentor found" })
+        }
+        const mentorId = mentor._id;
+        const mentees = await MenteeModel.find({ Mentor: mentorId })
+        if (mentees == null)
+        {
+            return res.status(400).json({ message: "No mentees found" })
         }
 
+        return res.status(200).json({ message: "Mentors found", mentees })
+    }
+    catch (error)
+    {
+        console.error(error)
+        return res.status(500).json({ message: "An error occurred" })
+    }
+}
 
-module.exports = { AssignMentor, FetchMentorByPhoneNo, GetAllMentors, GetMenteesByMentorPhoneNo }
+const FetchMenteeByPhoneNo = async (req, res) => 
+{
+    try
+    {
+        const { PhoneNo } = req.query;
+        const mentee = await MenteeModel.findOne({ PhoneNumber: PhoneNo })
+        if (mentee == null)
+        {
+            return res.status(400).json({ message: "No mentor found" })
+        }
+        return res.status(200).json({ message: "mentee found", mentee })
+    }
+    catch (error)
+    {
+        console.error(error)
+        return res.status(500).json({ message: "An error occurred" })
+    }
+}
+
+const GetMentorByMentorPhone = async (req, res) => 
+{
+    try
+    {
+        const { PhoneNo } = req.query;
+        const mentor = await MentorModel.findOne({ PhoneNumber: PhoneNo })
+        if (mentor == null)
+        {
+            return res.status(400).json({ message: "No mentor found" })
+        }
+        return res.status(200).json({ message: "mentor found", mentor })
+    }
+    catch (error)
+    {
+        console.error(error)
+        return res.status(500).json({ message: "An error occurred" })
+    }
+}
+
+
+module.exports = { AssignMentor, FetchMentorByPhoneNo, GetAllMentors, GetMenteesByMentorPhoneNo, FetchMenteeByPhoneNo, GetMentorByMentorPhone }

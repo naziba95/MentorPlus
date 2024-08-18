@@ -13,33 +13,10 @@ body {
     background-size: cover;
 }
 
-h1,
-h2 {
+h1, h2 {
     color: #333;
     text-align: center;
     margin: 20px 0;
-}
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-    text-align: center;
-    margin: 20px 0;
-}
-
-nav ul li {
-    display: inline-block;
-    margin: 0 10px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #007bff;
-    font-size: 18px;
-}
-
-nav ul li a:hover {
-    text-decoration: underline;
 }
 
 form {
@@ -50,6 +27,7 @@ form {
     width: 100%;
     max-width: 400px;
     margin: 20px auto;
+    position: relative;
 }
 
 label {
@@ -58,8 +36,7 @@ label {
     font-weight: bold;
 }
 
-input[type="text"],
-input[type="email"] {
+input[type="text"], input[type="email"] {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
@@ -83,18 +60,31 @@ button:hover {
     background-color: #0056b3;
 }
 
-#mentorDetails {
+.suggestions {
     background: #fff;
-    padding: 20px;
-    border-radius: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 100%;
+    left: 0;
     width: 100%;
-    max-width: 400px;
-    margin: 20px auto;
+    max-height: 150px;
+    overflow-y: auto;
+    z-index: 1000;
 }
 
-#mentorDetails p {
-    margin: 0 0 10px;
+.suggestions div {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.suggestions div:hover {
+    background-color: #f0f0f0;
+}
+
+.suggestions div.selected {
+    background-color: #e0e0e0;
 }
 
 /* Responsive Styles */
@@ -103,13 +93,7 @@ button:hover {
         padding: 10px;
     }
 
-    nav ul li {
-        display: block;
-        margin: 10px 0;
-    }
-
-    form,
-    #mentorDetails {
+    form {
         width: 100%;
         max-width: none;
     }
